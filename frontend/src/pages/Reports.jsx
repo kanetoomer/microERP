@@ -17,10 +17,13 @@ const Reports = () => {
         setMessage("You must be logged in.");
         return [];
       }
-      const response = await fetch("http://localhost:5000/api/reports/list", {
-        method: "GET",
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      const response = await fetch(
+        "https://microerp.onrender.com/api/reports/list",
+        {
+          method: "GET",
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
       if (!response.ok) {
         throw new Error("Failed to fetch reports");
       }
@@ -70,7 +73,7 @@ const Reports = () => {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/reports/generate-pdf",
+        "https://microerp.onrender.com/api/reports/generate-pdf",
         {
           method: "GET",
           headers: { Authorization: `Bearer ${token}` },
@@ -102,7 +105,7 @@ const Reports = () => {
         return;
       }
       const response = await fetch(
-        `http://localhost:5000/api/reports/download/${reportId}`,
+        `https://microerp.onrender.com/api/reports/download/${reportId}`,
         {
           method: "GET",
           headers: { Authorization: `Bearer ${token}` },

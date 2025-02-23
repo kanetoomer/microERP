@@ -24,7 +24,7 @@ const Analytics = () => {
         }
 
         const response = await fetch(
-          "http://localhost:5000/api/reports/forecast",
+          "https://microerp.onrender.com/api/reports/forecast",
           {
             method: "GET",
             headers: { Authorization: `Bearer ${token}` },
